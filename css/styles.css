@@ -118,7 +118,10 @@ a:active {
 main {
     display: grid;
     grid-template-columns: 50px 1fr 1fr 1fr 50px;
-    grid-template-rows: minmax(60px, 100px) 3fr 5fr;
+    /*
+    grid-template-rows: minmax(60px, 100px) 3fr 4fr;
+    */
+    grid-auto-rows: minmax(100px, auto);
     grid-template-areas: 
     " . title title title ."
     ". image image image ."
@@ -133,7 +136,10 @@ main {
 
    main {
        width: 100%;
-       grid-template-rows: 1fr minmax(100px,3fr) 10fr;
+       /*
+       grid-template-rows: 1fr 4fr 7fr;
+       */
+       grid-auto-rows: minmax(100px, auto);
        grid-template-areas: 
        "title title title title title"
        "image image image image image"
