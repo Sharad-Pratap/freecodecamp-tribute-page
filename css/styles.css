@@ -4,11 +4,12 @@
 :root {
     --font-stack: 'Montserrat', sans-serif;
     --font-script: 'Dancing Script', cursive;
-    --bg-dark: rgb(242, 242, 242);
+    --bg-dark: #145362;
     --bg-light: rgb(255, 255, 255);
     --dark-text: rgb(64, 74, 81);
     --light-text: rgb(136, 141, 145);
-    --card-border:  rgb(203, 203, 203);
+    --link-color: #1E7D94;
+    --link-hover-color: #A63557;
 }
 
 /* ====================== 
@@ -23,9 +24,11 @@ body {
     font-size: 1rem;
     line-height: 1.5;
     font-family: var(--font-stack);
+    color: var(--dark-text);
     margin: 0;
     text-align: left;
     background-color: var(--bg-dark);
+    position: absolute;
 }
 
 header {
@@ -33,7 +36,7 @@ header {
 }
 
 h1 {
-    font-size: 2.2em;
+    font-size: 2em;
     text-align: center;
 }
 
@@ -46,14 +49,44 @@ img {
     font-size: 1.5em;
 }
 
+main {
+    position: relative;
+    width:95%;
+    margin: 0 auto;
+    background-color: var(--bg-light);
+}
+
 #img-div {
     text-align: center;
+}
+
+#img-caption {
+    font-size: 0.7em;
 }
 
 #tribute info {
     padding: 5%;
 }
 
+a:link {
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+a:visited {
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--link-hover-color);
+
+}
+
+a:active {
+    text-decoration: underline;
+}
 
 /* ====================== 
     Layout Styles  
@@ -83,12 +116,11 @@ img {
 }
 
 main {
-    width: 100%;
     display: grid;
     grid-template-columns: 50px 1fr 1fr 1fr 50px;
-    grid-template-rows: minmax(30px, 100px) 3fr 5fr;
+    grid-template-rows: minmax(60px, 100px) 3fr 5fr;
     grid-template-areas: 
-    " . . title . ."
+    " . title title title ."
     ". image image image ."
     ". info info info .";
 }
@@ -100,7 +132,8 @@ main {
 @media screen and (max-width: 769px) {
 
    main {
-       grid-template-rows: 1fr minmax(100px, 550px) 10fr;
+       width: 100%;
+       grid-template-rows: 1fr minmax(100px,3fr) 10fr;
        grid-template-areas: 
        "title title title title title"
        "image image image image image"
@@ -112,6 +145,9 @@ main {
    }
 
    h1 {
-       font-size: 2em;
+       font-size: 1.75em;
+       background-color: var(--bg-dark);
+       color: var(--bg-light);
    }
   }
+  
